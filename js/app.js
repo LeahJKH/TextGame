@@ -12,8 +12,8 @@ const intro = [
 let index = 0;
 
 storyField.innerHTML = `<p>${intro[index]}</p>`;
-
-nextD.addEventListener("click", () => {
+nextD.addEventListener("click", introduction)
+function introduction {
     index++;
 
     if (index < intro.length) {
@@ -31,9 +31,27 @@ nextD.addEventListener("click", () => {
         const nameOfChar = txtField.value || "to lazy too input name";
         storyField.innerHTML = `<p>Nice to meet you, ${nameOfChar}!</p>`;
         nextD.textContent = "Next"
-    }
-});
 
-function sceneTwo (){
+        nextD.removeEventListener("click", introduction)
+        nextD.addEventListener("click", sceneTwo(nameOfChar))
+        sceneTwo(nameOfChar)
+    }
+};
+
+
+const start = [
+    "so u made it this far huh?",
+    "i mean writing ur name mustve been hard",
+    "so ill give u three options"
+]
+function sceneTwo (NNN){
+index++
+    if (index < start.length) {
+        storyField.innerHTML = `<p>${start[index]}</p>`
+    }
+    if (index === start.length - 1) {
+        nextD.textContent = "Submit";
+    }
+    
 
 }
