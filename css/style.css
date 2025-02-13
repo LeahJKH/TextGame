@@ -12,6 +12,8 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #txt-field {
